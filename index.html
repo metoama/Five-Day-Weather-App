@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,15 @@
     <title>Five Day Weather Dashboard</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+
+
 </head>
 
- <!--Local storage section first-->
+<!--Local storage section first-->
+
 <body>
-    
+
     <header>
         <h1>Five Day Weather Dashboard</h1>
     </header>
@@ -23,17 +25,89 @@
         <div class="row">
 
 
-        <div class="col-md-4">
-          <!--creating search bar-->
-           <div id="search">
-                <h2>Enter City Name</h2>
-                <p>Search by city name to get 5 day forecast.</p>   
-                <input id="search-city" type="search" placeholder="Indianapolis"><br>
-                <button id="search-button" type="search">Search</button>
+            <div class="col-md-4">
+                <!--creating search bar-->
+                <div id="search">
+                    <h2>Enter City Name</h2>
+                    <p>Search by city name to get 5 day forecast.</p>
+                    <input id="search-city" type="search" placeholder="Indianapolis"><br>
+                    <button id="search-button" type="search">Search</button>
+                </div>
+                <!--Creating Search history-->
+                <div id="search-history">
+
+                </div>
+                <!--start on Local Weather info-->
+                <div class="col-md-8 offset-md-10">
+                    <!---need to fix this-->
+                    <div id="local-weather">
+                        <h4><span id="local-area"></span> <span id="local-date"></span> 
+                            <img id="local-icon"alt="Weather icon" src=""></h4><br>
+                            <p>Temp: <span id="local-temp"></span> &deg; F</p> 
+                            <p>Wind: <span id="local-wind"></span>MPH</p>
+                            <p>Humidity: <span id="local-humid"></span>%</p>
+                            <p>UV Index: <span id="local-uv"></span></p>
+ </div>
+<!--Begin 5 Day Forecast-->
+ <div id="search-input">
+    <h3>5-Day Forecast</h3>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <p>
+                    <span id="5-day-one"></span>
+                </p>
+                <img id="5-day-icon-one" alt="Image Forecast Day One" src="">
+                <p>Temp: <span id="5-day-temp-one"></span> &deg; F</p>
+                <p>wind: <span id="5-day-wind-one"></span> MPH </p>
+                <p>Humidity: <span id="5-day-humid-one"></span> %</p>
 
 
+            </div>
+            
+            <div class="col-sm-6 col-md-6 col-lg-2">
+                <p>
+                    <span id="5-day-two"></span>
+                </p>
+                <img id="5-day-icon-two" alt="Image Forecast Day Two" src="">
+                <p>Temp: <span id="5-day-temp-two"></span> &deg; F</p>
+                <p>wind: <span id="5-day-wind-two"></span> MPH </p>
+                <p>Humidity: <span id="5-day-humid-two"></span> %</p>
+        </div>
         
+        <div class="col-sm-6 col-md-6 col-lg-2">
+            <p>
+                <span id="5-day-three"></span>
+            </p>
+            <img id="5-day-icon-three" alt="Image Forecast Day Three" src="">
+            <p>Temp: <span id="5-day-temp-three"></span> &deg; F</p>
+            <p>wind: <span id="5-day-wind-three"></span> MPH </p>
+            <p>Humidity: <span id="5-day-humid-three"></span> %</p>
     </div>
+    
+    <div class="col-sm-6 col-md-6 col-lg-2">
+        <p>
+            <span id="5-day-four"></span>
+        </p>
+        <img id="5-day-icon-four" alt="Image Forecast Day Four" src="">
+        <p>Temp: <span id="5-day-temp-four"></span> &deg; F</p>
+        <p>wind: <span id="5-day-wind-four"></span> MPH </p>
+        <p>Humidity: <span id="5-day-humid-four"></span> %</p>
+
+ </div>
+ 
+ <div class="col-sm-6 col-md-6 col-lg-2">
+    <p>
+        <span id="5-day-five"></span>
+    </p>
+    <img id="5-day-icon-five" alt="Image Forecast Day Five" src="">
+    <p>Temp: <span id="5-day-temp-five"></span> &deg; F</p>
+    <p>wind: <span id="5-day-wind-five"></span> MPH </p>
+    <p>Humidity: <span id="5-day-humid-five"></span> %</p>
+ </div>
+
 
 
 
