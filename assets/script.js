@@ -18,8 +18,8 @@ function showPosition(position) {
     console.log(lon);
 
 
-var APIkey ="4c775c14f8116de88e3696311fd2f42a"
-var weatherURL ="https://api.openweathermap.org/data/2.5/forecast?lat=" +"&lat" + lat + "&lon=" + lon + "&units=imperial &appid=" + APIkey; 
+//var APIkey ="4c775c14f8116de88e3696311fd2f42a"
+//var queryURL ="https://api.openweathermap.org/data/2.5/forecast?lat=" +"&lat" + lat + "&lon=" + lon + "&units=imperial &appid=" + APIkey; 
 } 
 
 
@@ -31,19 +31,16 @@ function citySearch() {
     var cityInput = $("#search").val();
     console.log(cityInput);
     var value = $(this).data("name")
-    var APIkey ="4c775c14f8116de88e3696311fd2f42a"
-    var queryURL = "https://api.openweathermap.org/data/2.5/find?q="+ value 
-    + "&units=imperial&appid=" + APIkey;
+    var APIkey ="16d32706938f58cb0f2a05bcb57d00a8"
+    var queryURL = 
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
+    fetch(queryURL)
 
-    }).then(function(response) {
-        console.log(response);
+     .then((response) => response.json())
+     //.then((data)) = console.log(data);
 
         //var selectCity = response.list[0].name;
-        var forecastIconOne = "https://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png";
+        var forecastIconOne = a.weather[0].icon;
         var forecastTempOne = response.list[0].main.temp;
         var forecastHumidOne = response.list[0].main.humidity;
         var forecastWindOne = response.list[0].main.wind;
@@ -52,13 +49,14 @@ function citySearch() {
         $("#forecast-Humid-One").prepend(forecastHumidOne);
         $("#forecast-Wind-One").prepend(forecastWindOne);
         $("#forecast-Date-One").prepend(forecastDateOne);
-        $("#forecast-Icon-One").attr("src", forecastIconOne);
+        $("#forecast-Icon-One").attr("src", iconURL);
         
+        var iconURL = "http://openweathermap.org/img/w/" + forecastIconOne + ".png";
 
         
-    })
+    }
 
-}
+
 
 var retrieveHistory = localStorage.getItem("Search Result");
 if(retrieveHistory){
